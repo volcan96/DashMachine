@@ -2,10 +2,14 @@ version: '2'
 
 services:
     dashmachine:
+# changing to match rev versions
+#      image: volcan96/dashmachine-docker-rpi:0.5-4
       image: volcan96/dashmachine-docker-rpi:latest
       restart: unless-stopped
       volumes:
       - /home/pi/dashmachine/_data:/dashmachine/dashmachine/user_data
+# for testing on macos
+#      - ~/dashmachine-docker-rpi/_data:/dashmachine/dashmachine/user_data
       ports:
       - 5000:5000
       environment:
